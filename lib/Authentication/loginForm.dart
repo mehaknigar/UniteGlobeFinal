@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uniteglobe/Authentication/forgetPassword.dart';
-import 'package:uniteglobe/Blogs/blogs.dart';
 import 'package:uniteglobe/Const/color.dart';
-//import 'package:uniteglobe/Home/home.dart';
+import 'package:uniteglobe/Home/bottomAppBar.dart';
 
 class LoginForm extends StatelessWidget {
   @override
@@ -88,14 +87,12 @@ class LoginForm extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Text("Login"),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Blogs(),
-                        ),
-                      );
-                    },
+                    onPressed: () => Navigator.pushReplacement(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => BottomBar(1),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -119,7 +116,6 @@ class LoginForm extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 10.0),
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:uniteglobe/Profile/profile.dart';
+import 'package:uniteglobe/widgets/post/post.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -25,10 +25,17 @@ class Home extends StatelessWidget {
                   obscureText: true,
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        /* showCupertinoModalBottomSheet(
+                          context: context,
+                          builder: (context, scrollController) => Container(
+                            child: Text('hey'),
+                          ),
+                        ); */
+                      },
                       icon: Icon(
                         AntDesign.search1,
-                        color: Colors.green[400],
+                        color: Color(0xff57A127),
                       ),
                     ),
                     hintText: "Search",
@@ -47,95 +54,11 @@ class Home extends StatelessWidget {
                 ),
               ),
               Post(),
+              Post(),
+              Post(),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class Post extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Column(
-        children: [
-          ListTile(
-            contentPadding: EdgeInsets.symmetric(vertical: 10),
-            leading: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Profile(),
-                  ),
-                );
-              },
-              child: CircleAvatar(
-                radius: 25.0,
-                backgroundImage: AssetImage("images/profile.jpg"),
-                backgroundColor: Colors.transparent,
-              ),
-            ),
-            title: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Profile(),
-                  ),
-                );
-              },
-              child: Text(
-                'hey',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            subtitle: Text('1 Day ago'),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.bookmark_border),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(MaterialCommunityIcons.dots_vertical),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Image.asset('images/post.jpg'),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(
-              vertical: 16,
-              horizontal: 10,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(SimpleLineIcons.like),
-                Icon(Feather.message_circle),
-                Icon(MaterialCommunityIcons.share_outline),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
