@@ -103,7 +103,7 @@ class _BottomBarState extends State<BottomBar> {
 
   void _onBottomBarItemTapped(int index) {
     if (index == 0) {
-      showMaterialModalBottomSheet(
+      showCupertinoModalBottomSheet(
         context: context,
         expand: false,
         builder: (context, scrollController) => BottomMenu(),

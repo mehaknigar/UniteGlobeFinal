@@ -9,19 +9,21 @@ import 'package:uniteglobe/Settings/setting.dart';
 class BottomMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          BottomMenuProfileButton(),
-          BottomMenuPagesList(),
-          Divider(
-            color: Color(0xffA7A7A7),
-          ),
-          BottomMenuPagesList2(),
-        ],
+    return Material(
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            BottomMenuProfileButton(),
+            BottomMenuPagesList(),
+            Divider(
+              color: Color(0xffA7A7A7),
+            ),
+            BottomMenuPagesList2(),
+          ],
+        ),
       ),
     );
   }

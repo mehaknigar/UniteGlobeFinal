@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+
+import 'chatScreenPage.dart';
 
 class ChatListPage extends StatelessWidget {
   @override
@@ -39,7 +42,14 @@ class ChatListPage extends StatelessWidget {
               separatorBuilder: (BuildContext context, int index) => Divider(),
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => ChatScreenPage(),
+                      ),
+                    );
+                  },
                   leading: CircleAvatar(
                     radius: 25.0,
                     backgroundImage: AssetImage("images/profile.jpg"),

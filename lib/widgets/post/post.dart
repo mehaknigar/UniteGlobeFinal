@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:like_button/like_button.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:uniteglobe/Profile/profile.dart';
 
 class Post extends StatelessWidget {
@@ -94,12 +96,31 @@ class Post extends StatelessWidget {
                     dotSecondaryColor: Color(0xff19A15F),
                   ),
                 ),
-                Icon(Feather.message_circle),
+                IconButton(
+                  icon: Icon(Feather.message_circle),
+                  onPressed: () {
+                    showCupertinoModalBottomSheet(
+                      context: context,
+                      builder: (context, scrollController) => PostBottomSheet(),
+                    );
+                  },
+                ),
                 Icon(MaterialCommunityIcons.share_outline),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class PostBottomSheet extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Container(
+        child: Text(' hey there'),
       ),
     );
   }

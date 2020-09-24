@@ -7,9 +7,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(240, 241, 243, 1),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(12.0),
-        child: SafeArea(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
           child: Column(
             children: [
               Card(
@@ -27,11 +27,11 @@ class Home extends StatelessWidget {
                     suffixIcon: IconButton(
                       onPressed: () {
                         /* showCupertinoModalBottomSheet(
-                          context: context,
-                          builder: (context, scrollController) => Container(
-                            child: Text('hey'),
-                          ),
-                        ); */
+                            context: context,
+                            builder: (context, scrollController) => Container(
+                              child: Text('hey'),
+                            ),
+                          ); */
                       },
                       icon: Icon(
                         AntDesign.search1,
@@ -53,9 +53,15 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
-              Post(),
-              Post(),
-              Post(),
+              Expanded(
+                child: ListView(
+                  children: [
+                    Post(),
+                    Post(),
+                    Post(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
