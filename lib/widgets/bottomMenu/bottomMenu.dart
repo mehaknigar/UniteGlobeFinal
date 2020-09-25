@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:uniteglobe/Blogs/blogs.dart';
+import 'package:uniteglobe/ContactUs/contactUs.dart';
+import 'package:uniteglobe/FriendsRequests/friendsRequests.dart';
+
 import 'package:uniteglobe/Group/group.dart';
+import 'package:uniteglobe/Notification/notification.dart';
+import 'package:uniteglobe/Post/savedPost.dart';
 import 'package:uniteglobe/Profile/profile.dart';
 import 'package:uniteglobe/Settings/setting.dart';
 
@@ -96,12 +101,12 @@ class BottomMenuPagesList extends StatelessWidget {
           BottomMenuPagesListItem(
             pageName: 'Friend Requests',
             icon: AntDesign.adduser,
-            pageWidget: Groups(),
+            pageWidget: FriendsRequests(),
           ),
           BottomMenuPagesListItem(
             pageName: 'Saved Posts',
             icon: Icons.bookmark_border,
-            pageWidget: Profile(),
+            pageWidget: SavedPost(),
           ),
           BottomMenuPagesListItem(
             pageName: 'My Settings',
@@ -111,7 +116,7 @@ class BottomMenuPagesList extends StatelessWidget {
           BottomMenuPagesListItem(
             pageName: 'Notifications Setting',
             icon: Feather.bell,
-            pageWidget: Profile(),
+            pageWidget: Notification1(),
           ),
         ],
       ),
@@ -132,7 +137,7 @@ class BottomMenuPagesList2 extends StatelessWidget {
           BottomMenuPagesListItem(
             pageName: 'Contact Us',
             icon: Feather.message_circle,
-            pageWidget: Profile(),
+            pageWidget: ContactUs(),
           ),
           BottomMenuPagesListItem(
             pageName: 'Logout',

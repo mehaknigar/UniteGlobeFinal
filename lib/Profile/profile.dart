@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uniteglobe/Const/color.dart';
+import 'package:uniteglobe/Post/upload.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -126,19 +128,29 @@ class UserInfo2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(6.0),
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration:
-            BoxDecoration(border: Border.all(color: Colors.grey, width: 1)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.photo_library),
-            Text(
-              "Photos/Videos",
-              style: TextStyle(fontSize: 14),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context) => UploadPost(),
             ),
-          ],
+          );
+        },
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          decoration:
+              BoxDecoration(border: Border.all(color: Colors.grey, width: 1)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.photo_library),
+              Text(
+                "Photos/Videos",
+                style: TextStyle(fontSize: 14),
+              ),
+            ],
+          ),
         ),
       ),
     );

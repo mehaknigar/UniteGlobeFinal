@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:uniteglobe/Const/color.dart';
 
 class ChatScreenPage extends StatefulWidget {
   @override
@@ -36,6 +37,7 @@ class _ChatScreenPageState extends State<ChatScreenPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: green,
         title: Text(
           'Instant Messaging',
         ),
