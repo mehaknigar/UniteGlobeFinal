@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uniteglobe/Const/color.dart';
 
-class Notification1 extends StatelessWidget {
+class NotificationSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

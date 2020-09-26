@@ -23,9 +23,9 @@ class Blogs extends StatelessWidget {
           onPressed: () => Navigator.pop(context, false),
         ),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(12.0),
-        child: SafeArea(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
               Card(
@@ -62,8 +62,7 @@ class Blogs extends StatelessWidget {
                   ),
                 ),
               ),
-              BlogBody(),
-              Divider(),
+              Articles(),
             ],
           ),
         ),
@@ -72,7 +71,23 @@ class Blogs extends StatelessWidget {
   }
 }
 
-class BlogBody extends StatelessWidget {
+class Articles extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView(
+        children: [
+          ArticleTile(),
+          ArticleTile(),
+          ArticleTile(),
+          ArticleTile(),
+        ],
+      ),
+    );
+  }
+}
+
+class ArticleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -84,54 +99,61 @@ class BlogBody extends StatelessWidget {
           ),
         );
       },
-      child: Container(
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 100,
-                child: Image.asset(
-                  "images/profile.jpg",
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Container(
+                  height: 100,
+                  child: Image.asset(
+                    "images/profile.jpg",
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Physics Books TOPIC...........",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+              Expanded(
+                flex: 2,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Physics Books TOPIC",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus ligula dui, sed congue lacus ultricies at. Nullam dolor dolor, tincidunt quis semper in, luctus aliquet leo",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16.0,
+                    Text(
+                      "Oct 20 , 2020",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Oct 20 , 2020",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
+                    Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus ligula dui, sed congue lacus ultricies at. Nullam dolor dolor, tincidunt quis semper in, luctus aliquet leo.",
+                      overflow: TextOverflow.clip,
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+          Divider(
+            color: Colors.grey,
+          ),
+        ],
       ),
     );
   }

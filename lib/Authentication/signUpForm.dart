@@ -1,7 +1,9 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:uniteglobe/Const/color.dart';
+import 'package:uniteglobe/widgets/Commons/datePicker.dart';
 
 class SignupForm extends StatelessWidget {
   const SignupForm({
@@ -157,30 +159,21 @@ class SignupForm extends StatelessWidget {
 ///// DOB FIELD
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                // validator: (String value) {
-                //   if (value.isEmpty) {
-                //     return "Required";
-                //   }
-                //   return null;
-                // },
-                cursorColor: green,
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red)),
-                  contentPadding: const EdgeInsets.all(
-                    16.0,
-                  ),
-                  prefixIcon: Material(
-                    color: Colors.transparent,
-                    child: Icon(
-                      Icons.calendar_today,
-                      color: green,
-                    ),
-                  ),
-                  hintText: "Enter Date of Birth",
+              child: MyTextFieldDatePicker(
+                prefixIcon: Icon(
+                  Feather.calendar,
+                  color: green,
                 ),
+                lastDate: DateTime.now(),
+                firstDate: DateTime(1900),
+                initialDate: DateTime.now().subtract(
+                  new Duration(
+                    minutes: 1,
+                  ),
+                ),
+                onDateChanged: (selectedDate) {
+                  // Do something with the selected date
+                },
               ),
             ),
 

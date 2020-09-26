@@ -117,7 +117,7 @@ class BottomMenuPagesList extends StatelessWidget {
           BottomMenuPagesListItem(
             pageName: 'Notifications Setting',
             icon: Feather.bell,
-            pageWidget: Notification1(),
+            pageWidget: NotificationSettings(),
           ),
         ],
       ),

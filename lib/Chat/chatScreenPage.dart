@@ -25,7 +25,14 @@ class _ChatScreenPageState extends State<ChatScreenPage> {
     });
   }
 
-  List<MessageBubble> messageBubbles = [];
+  List<MessageBubble> messageBubbles = [
+    MessageBubble(
+      date: "date",
+      sender: 'sender',
+      time: ' time',
+      text: 'ext',
+    ),
+  ];
 
   @override
   void initState() {

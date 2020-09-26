@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:uniteglobe/Chat/chatList.dart';
+import 'package:uniteglobe/Notification/notificationScreen.dart';
 import 'package:uniteglobe/Profile/profile.dart';
 import 'package:uniteglobe/widgets/bottomMenu/bottomMenu.dart';
 
@@ -28,7 +29,7 @@ class _BottomBarState extends State<BottomBar> {
     );
     pageList.add(Home());
     pageList.add(ChatListPage());
-    pageList.add(Profile());
+    pageList.add(NotificationScreen());
 
     super.initState();
     _selectedPage = widget.pageIndex;

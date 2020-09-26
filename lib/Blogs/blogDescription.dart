@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:uniteglobe/Const/color.dart';
+import 'package:uniteglobe/widgets/post/commentSection.dart';
 
 class BlogDescription extends StatelessWidget {
   @override
@@ -75,18 +77,27 @@ class BlogDescription extends StatelessWidget {
           Divider(),
           Padding(
             padding: const EdgeInsets.all(6.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Comments",
-                  style: TextStyle(fontSize: 16),
-                ),
-                Icon(
-                  Icons.comment,
-                  color: green,
-                ),
-              ],
+            child: GestureDetector(
+              onTap: () {
+                showCupertinoModalBottomSheet(
+                  expand: true,
+                  context: context,
+                  builder: (context, scrollController) => CommentItem(),
+                );
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Comments",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  Icon(
+                    Icons.comment,
+                    color: green,
+                  ),
+                ],
+              ),
             ),
           ),
         ]),
