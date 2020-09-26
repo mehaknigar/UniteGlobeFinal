@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:uniteglobe/Authentication/login.dart';
 import 'package:uniteglobe/Blogs/blogs.dart';
 import 'package:uniteglobe/ContactUs/contactUs.dart';
 import 'package:uniteglobe/FriendsRequests/friendsRequests.dart';
@@ -142,7 +143,7 @@ class BottomMenuPagesList2 extends StatelessWidget {
           BottomMenuPagesListItem(
             pageName: 'Logout',
             icon: Feather.log_out,
-            pageWidget: Profile(),
+            pageWidget: LogIn(),
           ),
         ],
       ),
